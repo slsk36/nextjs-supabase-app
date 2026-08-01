@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
+import { GoogleSignInButton } from "@/components/google-sign-in-button";
 import {
   Card,
   CardContent,
@@ -113,6 +114,17 @@ export function SignUpForm({
               </Link>
             </div>
           </form>
+          {/* 구분선 + 소셜 로그인. form 바깥에 두어 엔터 제출/브라우저 기본 검증과 얽히지 않게 합니다. */}
+          <div className="mt-6 flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <span className="h-px flex-1 bg-border" />
+              <span className="text-xs uppercase text-muted-foreground">
+                Or continue with
+              </span>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <GoogleSignInButton next="/protected" label="Sign up with Google" />
+          </div>
         </CardContent>
       </Card>
     </div>
