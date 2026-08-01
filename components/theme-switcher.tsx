@@ -16,10 +16,10 @@ const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // 서버에서는 현재 테마를 알 수 없어 하이드레이션 불일치가 발생합니다.
+  // 마운트 이후에만 렌더하는 next-themes 표준 패턴이므로 규칙을 예외 처리합니다.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => setMounted(true), []);
 
   if (!mounted) {
     return null;

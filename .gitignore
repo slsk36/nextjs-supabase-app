@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# shrimp-task-manager (프로젝트별 로컬 태스크 데이터)
+/shrimp_data
+
+# claude code (개인 로컬 설정 — 팀 공유 대상 아님)
+.claude/settings.local.json
