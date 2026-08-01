@@ -18,6 +18,15 @@
       "type": "stdio",
       "command": "npx",
       "args": ["shadcn@latest", "mcp"]
-    }
+    },
+    "shrimp-task-manager": {
+      "command": "node",
+      "args": ["D:/Users/inflearn/mcp-shrimp-task-manager/dist/index.js"],
+      "env": {
+        "DATA_DIR": "D:/Users/inflearn/nextjs-supabase-app/shrimp_data",
+        "TEMPLATES_USE": "en",
+        "ENABLE_GUI": "false"
+      }
+    }    
   }
 }
